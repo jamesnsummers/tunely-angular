@@ -10,12 +10,8 @@ angular
   // ^ the first argument is a string naming the controller,
   // the second argument is a function that defines the capacities
   // of the controller.
-  AlbumsIndexController.$inject = ['$http'];
-  function AlbumsIndexController (  $http  ) {
-    ...
-  }
-  
-function AlbumsIndexController () {
+AlbumsIndexController.$inject = ['$http'];
+function AlbumsIndexController ($http) {
   var vm = this;
   vm.newAlbum = {};
 
@@ -24,11 +20,9 @@ function AlbumsIndexController () {
       artistName: 'Morrissey'
   };
 
-  vm.albums = [];
-
   $http({
     method: 'GET',
-    url: // what goes here?
+    url: '/api/albums'
   }).then(function successCallback(response) {
     vm.albums = response.data;
   }, function errorCallback(response) {
