@@ -4,10 +4,10 @@
  *
  */
 
- angular
-   .module('tunely', ['ngRoute'])
-   .config(config)
-   .controller('AlbumsIndexController', AlbumsIndexController);
+angular
+ .module('tunely', ['ngRoute'])
+ .config(config)
+ .controller('AlbumsIndexController', AlbumsIndexController);
 
 config.$inject = ['$routeProvider', '$locationProvider'];
   function config(   $routeProvider,  $locationProvider   ) {

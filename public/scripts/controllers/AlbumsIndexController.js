@@ -1,3 +1,7 @@
+angular
+  .module('tunely')
+  .controller('AlbumsIndexController', AlbumsIndexController);
+
 AlbumsIndexController.$inject = ['$http'];
 
 function AlbumsIndexController ($http) {
