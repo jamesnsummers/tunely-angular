@@ -4,9 +4,30 @@
  *
  */
 
-angular
-  .module('tunely', [])
-  .controller('AlbumsIndexController', AlbumsIndexController);
+ angular
+   .module('tunely', ['ngRoute'])
+   .config(config)
+   .controller('AlbumsIndexController', AlbumsIndexController);
+
+config.$inject = ['$routeProvider', '$locationProvider'];
+  function config(   $routeProvider,  $locationProvider   ) {
+    $routeProvider
+      .when('/', {
+        template: 'This template will show the homepage, with all ablums!',
+        controller: 'AlbumsIndexController',
+        controllerAs: 'albumsIndexCtrl'
+      })
+      .when('/albums/:id', {
+        template: 'This template will show an album!',
+        controller: 'AlbumsShowController',
+        controllerAs: 'albumsShowCtrl'
+      });
+
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+    });
+  }
 
 AlbumsIndexController.$inject = ['$http'];
 
