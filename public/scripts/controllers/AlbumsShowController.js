@@ -15,11 +15,11 @@ function AlbumsShowController ($http, $routeParams) {
     vm.album = json.data;
   });
 
-  vm.editAlbum = function (album) {
+  vm.editSong = function (song) {
     $http({
       method: 'PUT',
-      url: '/api/albums/'+album._id,
-      data: album
+      url: '/api/albums/' + $routeParams.id + '/songs/' + song._id,
+      data: song
     }).then(function successCallback(json) {
       // don't need to do anything!
     }, function errorCallback(response) {
