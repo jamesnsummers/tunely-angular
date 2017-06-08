@@ -42,14 +42,14 @@
                     </div>
                   </ul>
 
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <input id="name" ng-model="albumsShowCtrl.newSong.trackNumber" type="text" class="form-control input-md" placeholder="Track Number">
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <input ng-model="albumsShowCtrl.newSong.name" type="text" class="form-control input-md" placeholder="Track Name">
                   </div>
                   <div class="col-md-4">
-                    <button class="btn btn-success" ng-click="albumsShowCtrl.createSong(song)">+ Add Song</button>
+                    <button class="btn btn-success" ng-click="albumsShowCtrl.createSong(song); editing = false">+ Add Song</button>
                   </div>
                 </div>
               </div>
