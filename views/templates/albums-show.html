@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="AlbumsIndexController as albumsIndexCtrl", "AlbumsShowController as albumsShowCtrl">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="row">
@@ -7,7 +7,7 @@
             <div class="panel-body">
               <div class='row'>
                 <div class="col-md-3 col-xs-12 thumbnail">
-                  <img src="images/800x800.png" alt="album image">
+                  <img src="/images/800x800.png" alt="album image">
                 </div>
 
                 <div class="col-md-9 col-xs-12">
@@ -30,7 +30,14 @@
                     <li class="list-group-item">
                       <h4 class="inline-header">Songs:</h4>
                       <div class="list-group-item" ng-repeat="song in albumsShowCtrl.album.songs">
-                        ({{song.trackNumber}}){{song.name}}
+                        <span>({{song.trackNumber}}) {{song.name}}</span>
+                      </div>
+                      <div class='panel-footer'>
+                        <div class='panel-footer'>
+                          <button class='btn btn-danger' ng-click="albumsIndexCtrl.deleteAlbum(album)">Delete Album</button>
+                          <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit Album</button>
+                          <button class='btn btn-success' ng-show="editing" ng-click="albumsIndexCtrl.editAlbum(album); editing = false">Save Changes</button>
+                        </div>
                       </div>
                     </li>
                   </ul>
