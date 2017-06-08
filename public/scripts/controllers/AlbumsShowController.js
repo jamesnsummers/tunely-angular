@@ -15,6 +15,18 @@ function AlbumsShowController ($http, $routeParams) {
     vm.album = json.data;
   });
 
+  vm.createSong = function () {
+    $http({
+      method: 'POST',
+      url: '/api/albums/' + $routeParams.id + '/songs/',
+      data: vm.newSong,
+    }).then(function successCallback(response) {
+      vm.album.songs.push(response.data);
+    }, function errorCallback(response) {
+      console.log('There was an error posting the data', response);
+    });
+  }
+
   vm.editSong = function (song) {
     $http({
       method: 'PUT',

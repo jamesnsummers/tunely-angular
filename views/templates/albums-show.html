@@ -37,9 +37,20 @@
                         <input ng-show="editing" ng-model="song.name" type="text" class="form-control input-md">
                       </div>
                     </li>
+
                     <div class='panel-footer'>
                     </div>
                   </ul>
+
+                  <div class="col-md-4">
+                    <input id="name" ng-model="albumsShowCtrl.newSong.trackNumber" type="text" class="form-control input-md" placeholder="Track Number">
+                  </div>
+                  <div class="col-md-4">
+                    <input ng-model="albumsShowCtrl.newSong.name" type="text" class="form-control input-md" placeholder="Track Name">
+                  </div>
+                  <div class="col-md-4">
+                    <button class="btn btn-success" ng-click="albumsShowCtrl.createSong(song)">+ Add Song</button>
+                  </div>
                 </div>
               </div>
             </div>
