@@ -13,8 +13,6 @@ function AlbumsShowController ($http, $routeParams) {
     url: '/api/albums/'+$routeParams.id
   }).then(function successCallback(json) {
     vm.album = json.data;
-  }, function errorCallback(response) {
-    console.log('There was an error getting the data', response);
   });
 
   vm.editAlbum = function (album) {
